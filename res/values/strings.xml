@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">潮汐小提示</string>
+    <string name="action_settings">关于</string>
+    <string name="tideLabel">今日涨退潮时间:</string>
+    <string name="todaySpring">最大潮:</string>
+    <string name="todayNeap">枯潮:</string>
+    <string name="currentdate">今天是:</string>
+    <string name="currenttime">现在时间:</string>
+    <string name="appabout">现在时间:</string>
+    <string name="exit">退出</string>
+</resources>

@@ -1,0 +1,104 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:orientation="vertical"
+    >
+	<LinearLayout 
+	    android:id="@+id/line1"
+	    android:orientation="vertical"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/corners_bg"
+    	>
+		<TextView
+	        android:id="@+id/txtViewTIdeLabel"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:textSize="18sp"
+	        android:paddingLeft="5dip"
+	        android:text="@string/tideLabel" />
+		<TextView
+	        android:id="@+id/txtViewSpring"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingLeft="20dip"
+	        android:text="@string/todaySpring" />
+	    <TextView
+	        android:id="@+id/txtViewNeap"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingLeft="20dip"
+	        android:text="@string/todayNeap" />
+	</LinearLayout>
+    
+	<LinearLayout
+	    android:id="@+id/line2"
+	    
+	    android:orientation="vertical"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:background="#CCFFFF"
+	    >
+	    <TextView
+	        android:id="@+id/txtViewCurrentDate"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingLeft="5dip"
+	        android:text="@string/currentdate" />
+	    <LinearLayout	    
+	        android:orientation="horizontal"
+	    	android:layout_width="match_parent"
+	    	android:layout_height="match_parent">
+		        <TextView
+			        android:id="@+id/txtViewCurrentTime"
+			        android:layout_width="wrap_content"
+			        android:layout_height="match_parent"
+			        android:paddingLeft="20dip"
+			        android:text="@string/currenttime" />
+	    
+			    <DigitalClock
+			        android:id="@+id/digitalClock"
+			        android:layout_width="wrap_content"
+			        android:layout_height="match_parent" />
+
+
+	    </LinearLayout>
+	</LinearLayout>
+	<LinearLayout
+	    android:id="@+id/line3"
+	    
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:background="#6699CC"
+	    >
+		<ImageView
+	        android:id="@+id/imageView1"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:src="@drawable/spring"
+	        android:scaleType="fitXY"
+	         />
+	</LinearLayout>
+	<LinearLayout
+	    android:id="@+id/line4"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:background="#666666"
+	    android:orientation="horizontal"
+	    >
+		<LinearLayout 
+    	        android:id="@+id/adLayout"
+    	        android:orientation="vertical"
+    			android:layout_width="match_parent"
+    			android:layout_height="match_parent"
+    			android:gravity="center_horizontal">
+
+    	</LinearLayout>
+		<Button 
+    	    android:id="@+id/btExit"
+    	    android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:text="@string/exit" />"
+    </LinearLayout>
+</LinearLayout>
