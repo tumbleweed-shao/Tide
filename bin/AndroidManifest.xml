@@ -10,12 +10,8 @@
         android:minSdkVersion="4"
         android:targetSdkVersion="4" />
 	<uses-permission android:name="android.permission.INTERNET"/> 
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> 
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> 
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-    <uses-permission android:name="android.permission.GET_TASKS"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher_new"
@@ -37,38 +33,5 @@
                 <action android:name="android.intent.action.SENDTIDETOACTIVITY" />
             </intent-filter>
         </receiver>
-        <!-- for Youmi AD start  -->
-        <activity
-        	android:name="net.youmi.android.AdBrowser"
-        	android:configChanges="keyboard|keyboardHidden|orientation"            
-        	android:theme="@android:style/Theme.Light.NoTitleBar" >
-    	</activity>
-    	<service
-        	android:name="net.youmi.android.AdService"
-        	android:exported="false" >
-    	</service>
-    	<receiver 
-        	android:name="net.youmi.android.AdReceiver" >
-        	<intent-filter>
-            	<action android:name="android.intent.action.PACKAGE_ADDED" />
-            	<data android:scheme="package" />
-        	</intent-filter>
-    	</receiver> 
-    	
-    	 <activity
-		    android:name="net.youmi.android.SmartBannerActivity"
-		    android:configChanges="keyboard|keyboardHidden|orientation"
-		    android:theme="@style/Transparent">        
-		    </activity>
-	    <service
-	    	android:name="net.youmi.android.SmartBannerService"
-	    	android:exported="false">        
-	    </service>
-    	
-    	    <receiver
-        android:name="net.youmi.android.offers.OffersReceiver"
-        android:exported="false" >
-    </receiver>
-    	<!--for Youmi AD end -->
     </application>
 </manifest>

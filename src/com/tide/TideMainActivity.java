@@ -55,19 +55,6 @@ public class TideMainActivity extends Activity {
 		Intent in = new Intent();
 		in.setClass(TideMainActivity.this, TideService.class);
 		startService(in);
-		//YouMiAD start
-		AdManager.getInstance(this).init("6145a6fa720a1d1b", "dc70b6386802e32a", false);
-		//AdManager.getInstance(this).setEnableDebugLog(false);
-		//SpotManager.getInstance(this).loadSpotAds();
-		//SpotManager.getInstance(this).setSpotTimeout(5000);//5秒
-		//SpotManager.getInstance(this).showSpotAds(this);
-		//实例化广告条
-	    AdView adView = new AdView(this, AdSize.FIT_SCREEN);
-	    //获取要嵌入广告条的布局
-	    LinearLayout adLayout=(LinearLayout)findViewById(R.id.adLayout);
-	    //将广告条加入到布局中
-	    adLayout.addView(adView);
-	    //YouMiAD end
 	     
 	}
 
