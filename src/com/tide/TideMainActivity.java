@@ -6,9 +6,9 @@ import java.util.Calendar;
 import java.util.TimeZone;
 import java.util.Timer;
 import java.util.TimerTask;
-import net.youmi.android.AdManager;
-import net.youmi.android.banner.AdSize;
-import net.youmi.android.banner.AdView;
+
+import com.adfeiwo.banner.AdBanner;
+import com.adfeiwo.banner.RecevieAdListener;
 import com.tide.common.Lunar;
 import com.tide.common.Tide;
 import com.tide.common.TideHelper;
@@ -30,9 +30,14 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.DigitalClock;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class TideMainActivity extends Activity {
+	private RelativeLayout myAdonContainerView;
+	private String appKey = "36o665xn2MLx0I5z8T7H8aB7";
+    private AdBanner myAdView;
+
 	MediaPlayer player = null;
 	LinearLayout llfather;
 	static Tide tideInfo = null;
@@ -55,7 +60,7 @@ public class TideMainActivity extends Activity {
 		Intent in = new Intent();
 		in.setClass(TideMainActivity.this, TideService.class);
 		startService(in);
-	     
+		initAD();
 	}
 
 	@Override
@@ -205,5 +210,24 @@ public class TideMainActivity extends Activity {
 
 		}
 		
+	}
+	private void initAD(){
+		myAdonContainerView = (RelativeLayout)findViewById(R.id.adonContainerView);
+        myAdView = new AdBanner(this);//这个设置的宽度就是广告条显示的宽度，高度根据广告条的宽高等比缩放，如果不设置则默认使用屏幕的宽高
+        myAdonContainerView.addView(myAdView);
+		myAdView.setAppKey(appKey);
+		RecevieAdListener adListener = new RecevieAdListener() {
+			@Override
+			public void onSucessedRecevieAd(AdBanner adView) {
+				//广告获取成功，显示广告
+				myAdonContainerView.setVisibility(View.VISIBLE);
+			}
+			@Override
+			public void onFailedToRecevieAd(AdBanner adView) {
+				//广告获取失败，隐藏广告
+				myAdonContainerView.setVisibility(View.GONE);
+			}
+		};
+		myAdView.setRecevieAdListener(adListener);
 	}
 }
